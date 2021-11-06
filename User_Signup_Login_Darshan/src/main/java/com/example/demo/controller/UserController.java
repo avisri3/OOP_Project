@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.User;
-//import com.example.demo.dao.UserRepo;
+import com.example.demo.dao.UserRepo;
 
 @Controller
 public class UserController {
 
-//	@Autowired
-//	UserRepo repo;
-//	
+	@Autowired
+	UserRepo repo;
+	
 	@RequestMapping("/signin")
 	public String signinOption()
 	{
@@ -56,12 +56,12 @@ public class UserController {
 		return "Page Under Construction";
 	}
 	
-@RequestMapping("/registerUser")
 	
-	@ResponseBody
-	public String resgisterUser()
+	@RequestMapping("/registerUser")
+	public String resgisterUser(User user)
 	{
-		return "Page Under Construction";
+		repo.save(user);
+		return "AfterUserReg.jsp";
 	}
 
 	
