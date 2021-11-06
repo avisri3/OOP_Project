@@ -1,8 +1,12 @@
 package com.example.demo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 	
-	
+	@Id
 	public String username;
 	public String idNumber;
 	public String email;
@@ -10,6 +14,7 @@ public class User {
 	public String hostelName;
 	public String roomNumber;
 	private String password;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -45,6 +50,10 @@ public class User {
 	}
 	public void setRoomNumber(String roomNumber) {
 		this.roomNumber = roomNumber;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	@Override
 	public String toString() {

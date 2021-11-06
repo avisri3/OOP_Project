@@ -46,6 +46,7 @@ Room No.
 
 <p>
 Password
+
 <input type="password" name="password">
 </p>
 
