@@ -74,15 +74,6 @@ public class UserController {
 		return mv;
 	}
 	
-//	
-//@RequestMapping("/admin_signin")
-//	
-//	
-//	public String adminSignin()
-//	{
-//		return "userSignin.jsp";
-//	}
-
 
 	@RequestMapping("/getUser")
 	public ModelAndView getUser(@PathVariable("username") @RequestParam String username, @RequestParam String password)

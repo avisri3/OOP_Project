@@ -29,7 +29,7 @@
                         <h3 class="text-whitesmoke">Sign in as an admin</h3>
                         <p class="text-whitesmoke">Sign In</p>
                     <div class="container-content">
-                        <form class="margin-t" action="/getUser" >
+                        <form class="margin-t" action="/getAdmin" >
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Username" name="username" required="">
                             </div>
