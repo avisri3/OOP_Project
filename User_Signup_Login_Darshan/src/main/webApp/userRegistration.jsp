@@ -8,48 +8,16 @@
 </head>
 <body>
 
-<form action="/registerUser">
+<form action="/checkUsername">
 
 <p>
-Username
+Enter a Username and click submit to Check Availibility 
 	<input type="text" name="username">
+	
+	
+	Current Username is not availible
 </p>
  
-
-<p>
-ID No.
-<input type="text" name="idNumber">
-</p>
-
-
-<p>
-Email ID
-<input type="email" name="email">
-</p>
-
-
-<p>
-Mobile No.
-<input type="text" name="mobileNumber">
-</p>
-
-<p>
-Hostel Name
-<input type="text" name="hostelName">
-</p>
-
-<p>
-Room No.
-<input type="text" name="roomNumber">
-</p>
-
-
-<p>
-Password
-
-<input type="password" name="password">
-</p>
-
 <input type="submit">	
 
 
