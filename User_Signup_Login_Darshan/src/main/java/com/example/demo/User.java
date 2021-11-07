@@ -55,6 +55,18 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public boolean passwordmatch(String s)
+	{
+		if(s.equals(this.password))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", idNumber=" + idNumber + ", email=" + email + ", mobileNumber="
