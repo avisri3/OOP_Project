@@ -44,6 +44,36 @@ public class UserController {
 		
 	}
 	
+	@RequestMapping("/checkUsername")
+	
+	public ModelAndView ModelAndView(@RequestParam String username)
+	{
+		ModelAndView mv = new ModelAndView();
+		if(username.length()==0)
+		{
+			mv.setViewName("userRegistration.jsp");
+			return mv;
+		}
+		
+		List<User>UserList;
+		UserList=  repo.findByUsername(username);
+		
+		if(UserList.isEmpty())
+		{
+			User tempuser= new User();
+			tempuser.setUsername(username);
+			mv.addObject("user", tempuser);
+			mv.setViewName("userRegUsernameAvailible.jsp");
+		}
+		else
+		{
+			mv.setViewName("userRegistration.jsp");
+		}
+		
+		
+		return mv;
+	}
+	
 	
 @RequestMapping("/admin_signin")
 	
@@ -92,21 +122,25 @@ public class UserController {
 	
 	
 	
-	@RequestMapping("/user/{username}")
 	
-	public String getUser(@PathVariable ("username") String username )
-	{	
-		return "userpage.jsp";
-		
-	}
 	
-	@RequestMapping("/userlogin_incorrect")
+//	Do this after everything Done
 	
-	public String user_incorrect()
-	{	
-		return "user_incorrect.jsp";
-		
-	}
+//	@RequestMapping("/user/{username}")
+//	
+//	public String getUser(@PathVariable ("username") String username )
+//	{	
+//		return "userpage.jsp";
+//		
+//	}
+//	
+//	@RequestMapping("/userlogin_incorrect")
+//	
+//	public String user_incorrect()
+//	{	
+//		return "user_incorrect.jsp";
+//		
+//	}
 
 	
 	
