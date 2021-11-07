@@ -92,6 +92,12 @@ public class UserController {
 		List<User>UserList;
 		UserList=  repo.findByUsername(username);
 		
+		if(UserList.isEmpty())
+		{
+			mv.setViewName("user_incorrect.jsp");
+			return mv;	
+		}
+		
 		User user= UserList.get(0);
 		
 		
