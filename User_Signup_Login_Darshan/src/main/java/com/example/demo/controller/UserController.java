@@ -74,14 +74,14 @@ public class UserController {
 		return mv;
 	}
 	
-	
-@RequestMapping("/admin_signin")
-	
-	@ResponseBody
-	public String adminSignin()
-	{
-		return "Page Under Construction";
-	}
+//	
+//@RequestMapping("/admin_signin")
+//	
+//	
+//	public String adminSignin()
+//	{
+//		return "userSignin.jsp";
+//	}
 
 
 	@RequestMapping("/getUser")
