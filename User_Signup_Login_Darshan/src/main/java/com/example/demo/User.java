@@ -67,6 +67,19 @@ public class User {
 		}
 	}
 	
+	public User editDetails(String username,String idNumber,String email,String mobileNumber,String hostelName,String roomNumber )
+	{
+		this.email=email;
+		this.hostelName=hostelName;
+		this.idNumber=idNumber;
+		this.mobileNumber=mobileNumber;
+		this.roomNumber=roomNumber;
+		this.username=username;
+		
+		return this;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", idNumber=" + idNumber + ", email=" + email + ", mobileNumber="
