@@ -31,10 +31,10 @@
                     <div class="container-content">
                         <form class="margin-t" action="/getUser" >
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Username" name="username" required="">
+                                <input type="text" class="form-control" placeholder="Username" name="username" required="required">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="*****"  name="password" required="">
+                                <input type="password" class="form-control" placeholder="*****"  name="password" required="required">
                             </div>
                             <button type="submit" class="form-button button-l margin-b">Sign In</button>
             

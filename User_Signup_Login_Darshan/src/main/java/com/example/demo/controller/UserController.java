@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.User;
@@ -115,6 +116,21 @@ public class UserController {
 	{
 		repo.save(user);
 		return "AfterUserReg.jsp";
+	}
+	
+	@RequestMapping("/getDetails")
+	public ModelAndView getDetails(String  username)
+	{
+		List<User>UserList;
+		UserList=  repo.findByUsername(username);
+		User user= UserList.get(0);
+//		System.out.println(user.toString());
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("user",user);
+		mv.setViewName("UserDetails.jsp");
+		
+		return mv;
 	}
 	
 	
