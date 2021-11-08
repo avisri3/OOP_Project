@@ -158,11 +158,49 @@ public class UserController {
 		User user_new= user1.editDetails(user.username, user.idNumber, user.email, user.mobileNumber, user.hostelName, user.roomNumber);
 		repo.delete(user1);
 		repo.save(user_new);
-		
-		
-		
-	
+
 		return "EditUserDetailsConfirmation.jsp";
+	}
+	
+	@RequestMapping("/editUserPassword")
+	public ModelAndView editUserPassword(String  username)
+	{
+		List<User>UserList;
+		UserList=  repo.findByUsername(username);
+		User user= UserList.get(0);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("user",user);
+		mv.setViewName("EditPassword.jsp");
+		
+		
+		return mv;
+	}
+	
+	@RequestMapping("/EditPassword")
+	
+	public String editPassword(String username,String old_,String new_)
+	{
+		List<User>UserList;
+		UserList=  repo.findByUsername(username);
+		User user= UserList.get(0);
+		
+		
+		if(user.passwordmatch(old_))
+		{
+			User user_pass_change= user.editPassword(new_);
+			repo.delete(user);
+			repo.save(user_pass_change);
+			return "EditUserDetailsConfirmation.jsp";
+			
+		}
+		else
+		{
+			return"password_change_fail.jsp";
+		}
+		
+		
+		
+		
 	}
 	
 	
