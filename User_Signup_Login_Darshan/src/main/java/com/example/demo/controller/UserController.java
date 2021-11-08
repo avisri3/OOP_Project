@@ -133,6 +133,38 @@ public class UserController {
 		return mv;
 	}
 	
+	@RequestMapping("/editUserDetails")
+	public ModelAndView editUserDetails(String  username)
+	{
+		List<User>UserList;
+		UserList=  repo.findByUsername(username);
+		User user= UserList.get(0);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("user",user);
+		mv.setViewName("EditUserInfo.jsp");
+		
+		
+		return mv;
+	}
+	
+	@RequestMapping("/saveUserDetails")
+	public String saveUserDetails(User user)
+	{
+		String s= user.username;
+		List<User>UserList;
+		UserList=  repo.findByUsername(s);
+		User user1= UserList.get(0);
+		
+		User user_new= user1.editDetails(user.username, user.idNumber, user.email, user.mobileNumber, user.hostelName, user.roomNumber);
+		repo.delete(user1);
+		repo.save(user_new);
+		
+		
+		
+	
+		return "EditUserDetailsConfirmation.jsp";
+	}
+	
 	
 	
 	
