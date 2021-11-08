@@ -1,0 +1,1 @@
+insert into user values ('jatin' ,'jatin@gmail.com','a','b','c','d','e' );

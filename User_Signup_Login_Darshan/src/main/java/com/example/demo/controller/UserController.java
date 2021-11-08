@@ -74,15 +74,6 @@ public class UserController {
 		return mv;
 	}
 	
-	
-@RequestMapping("/admin_signin")
-	
-	@ResponseBody
-	public String adminSignin()
-	{
-		return "Page Under Construction";
-	}
-
 
 	@RequestMapping("/getUser")
 	public ModelAndView getUser(@PathVariable("username") @RequestParam String username, @RequestParam String password)
