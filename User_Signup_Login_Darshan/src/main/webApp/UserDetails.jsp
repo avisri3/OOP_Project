@@ -44,6 +44,15 @@
                     <div class="form-group">
 						            <button type="submit" class="btn btn-success btn-lg btn-block" name="username" id="username" value=${user.username }>Edit Details</button>
 						        </div>
+
+                    </form>
+                    
+                     <form action="/editUserPassword">
+                    
+                    <div class="form-group">
+						            <button type="submit" class="btn btn-success btn-lg btn-block" name="username" id="username" value=${user.username }>Edit Password</button>
+						        </div>
+
                     </form>
                     
              </div>

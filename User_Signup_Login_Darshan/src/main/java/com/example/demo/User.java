@@ -79,6 +79,12 @@ public class User {
 		return this;
 	}
 	
+	public User editPassword(String password)
+	{
+		this.password=password;
+		return this;
+	}
+	
 	
 	@Override
 	public String toString() {
